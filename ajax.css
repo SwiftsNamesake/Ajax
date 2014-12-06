@@ -31,6 +31,7 @@
 
 .highlight {
 	background-color: orange;
+	-webkit-transition: background-color 1s; 
 }
 
 

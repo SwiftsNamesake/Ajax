@@ -29,7 +29,7 @@ function addReferenceHighlights () {
 		e.preventDefault();
 		note = document.getElementById(e.toElement.href.slice(-1)); // TODO: Fix the slice arguments (this will break for multiple-digit numbers)
 		
-		// window.location = e.toElement.href;
+		window.location = e.toElement.href;
 
 		// TODO: Add and remove classes properly
 		if (previous !== undefined) {
@@ -57,6 +57,7 @@ function loadResource(path, onReady) {
 	// Sends a request for the specified resource and invokes the supplied callback upon success.
 
 	var request = new XMLHttpRequest();
+	request.open("GET", path, true);
 
 	request.onreadystatechange = function() {
 		if (request.status !== 200) {
@@ -66,11 +67,15 @@ function loadResource(path, onReady) {
 			onReady(request); // Invoke callback
 		}
 	};
+
+	request.send();
+
 }
 
 
 function reloadContents() {
-	loadResource("contents.txt", function(request) { document.getElementById("scratchboard").innerHtml = request.response; });
+	console.log("Reloading...");
+	loadResource("contents.txt", function(request) { document.getElementById("scratchboard").innerHTML = request.response; });
 }
 
 
