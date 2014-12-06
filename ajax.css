@@ -32,3 +32,12 @@
 .highlight {
 	background-color: orange;
 }
+
+
+#scratchboard {
+	border: 4px dashed purple;
+	min-height: 20px;
+	min-width: 80%;
+	padding: 1%;
+	color: lightgrey;
+}
