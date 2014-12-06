@@ -13,21 +13,27 @@
  *
 */
 
+
+
 .notelink {
 	color: blue;
 }
+
 
 .notelink:visited {
 	color: rgb(255, 0, 230);
 }
 
+
 .notelink:active {
 	color: rgb(255, 0, 20);
 }
 
+
 .note {
 
 }
+
 
 .highlight {
 	background-color: orange;
@@ -41,4 +47,10 @@
 	min-width: 60%;
 	padding: 1%;
 	color: lightgrey;
+}
+
+
+#scratchboard::selection {
+	color: white;
+	background-color: rgba(25, 20, 20, 0.3);
 }
