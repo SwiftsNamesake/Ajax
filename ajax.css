@@ -1,0 +1,34 @@
+/*
+ * Ajax.html
+ * Dynamic web page content, courtesy of Zeus' grandson
+ *
+ * Jonatan H Sundqvist
+ * December 6 2014
+ *
+ * TODO | - 
+ *        -
+ *	
+ * SPEC | - 
+ *        -
+ *
+*/
+
+.notelink {
+	color: blue;
+}
+
+.notelink:visited {
+	color: rgb(255, 0, 230);
+}
+
+.notelink:active {
+	color: rgb(255, 0, 20);
+}
+
+.note {
+
+}
+
+.highlight {
+	background-color: orange;
+}
