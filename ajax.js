@@ -73,6 +73,27 @@ function loadResource(path, onReady) {
 }
 
 
+function ajax(attributes) {
+	// 
+	
+	var request = new XMLHttpRequest();
+	request.open(attributes["type"], attributes["url"], true);
+
+	request.onreadystatechange = function() {
+		
+		if (request.status !== 200) {
+			attributes["failure"](request);
+		} else {
+			attributes["success"](request);
+		}
+
+	}
+
+	request.send();
+
+}
+
+
 function reloadContents() {
 	console.log("Reloading...");
 	loadResource("contents.txt", function(request) { document.getElementById("scratchboard").innerHTML = request.response; });

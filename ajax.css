@@ -5,7 +5,7 @@
  * Jonatan H Sundqvist
  * December 6 2014
  *
- * TODO | - 
+ * TODO | - DIP units (?)
  *        -
  *	
  * SPEC | - 
@@ -14,6 +14,66 @@
 */
 
 
+/* Body */
+body {
+	background: url(cherry.jpg);
+}
+
+
+/* Header */
+#page {
+	margin: 20px;
+	padding: 10px;
+	/*background-color: white;*/
+	background: url(A4.jpg);
+	box-shadow: 12px 12px 5px rgba(22, 22, 22, 0.75);
+}
+
+
+#navbar ul {
+	list-style-position: none;
+	padding: 0px;
+	margin: 0px;
+	/*display: block;*/
+	height: 45px;
+	background: rgba(255, 255, 255, 0.4);
+	overflow: hidden;
+}
+
+
+#navbar ul li {
+	float: left;
+	display: inline;
+	padding: 5px;
+	margin: 0px;
+	height: 100%;
+	line-height: 100%;
+}
+
+
+#navbar ul li:hover {
+	background-color: rgba(255, 255, 255, 0.65)
+}
+
+
+
+#navbar ul li a {
+	font-family: Verdana;
+	font-size: 20px;
+	color: #CCEFEF;
+	text-decoration: none;
+}
+
+
+/* Reference essay */
+#essay p {
+	margin: 0px;
+}
+
+
+#essay {
+	margin: 12px;
+}
 
 .notelink {
 	color: blue;
@@ -30,6 +90,8 @@
 }
 
 
+
+/* Notes */
 .note {
 
 }
@@ -41,6 +103,7 @@
 }
 
 
+/* Scratch board */
 #scratchboard {
 	border: 4px dashed purple;
 	min-height: 20px;
@@ -53,4 +116,44 @@
 #scratchboard::selection {
 	color: white;
 	background-color: rgba(25, 20, 20, 0.3);
+}
+
+
+#save {
+	border: 5px solid green;
+	/*border-radius: 40%;*/
+	background-color: rgb(20, 230, 55);
+	box-shadow: 3px 4px 3px #888888;
+}
+
+
+#save:active {
+	border: 5px solid green;
+	background-color: rgb(20, 230, 55);
+}
+
+
+#save:hover {
+	transition: box-shadow 0.3s;
+	box-shadow: 3px 4px 3px #AAAAAA;
+}
+
+
+#scratch {
+	border: 5px solid #F4920B;
+	/*border-radius: 40%;*/
+	background-color: #FFB76F;
+	box-shadow: 3px 4px 3px #888888;
+}
+
+
+#scratch:active {
+	border: 5px solid orange;
+	background-color: rgb(20, 230, 55);
+}
+
+
+img {
+	width: 50px;
+	height: 50px;
 }

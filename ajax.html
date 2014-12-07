@@ -7,6 +7,7 @@
  -
  - TODO | - Adding notes and references
  -        - Support for all major browser vendors (cf. prefixes)
+ -        - Custom server, query strings
  -	
  - SPEC | - 
  -        -
@@ -24,17 +25,37 @@
 	<title>Son of Telamon</title>
 </head>
 <body>
-	<h1>Dynamic content</h1>
-	<p>This is a simple demonstration of a set of technologies collectively know as <em>Ajax</em><sup><a href="ajax.html#1" class="notelink">[1]</a></sup>.<p>
-	<p>Ajax is a well known figure from Greek Mythology and is believed to be the grand son of Zeus himself<sup><a href="ajax.html#2" class="notelink">[2]</a></sup>.</p>
+
+	<div id="page">
+
+	<header id="navbar">
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">About</a></li>
+			<li><a href="">Projects</a></li>
+		</ul>
+	</header>
+
+	<div id="essay">
+		<h1>Dynamic content</h1>
+		<p>This is a simple demonstration of a set of technologies collectively know as <em>Ajax</em><sup><a href="ajax.html#1" class="notelink">[1]</a></sup>.<p>
+		<p>Ajax is a well known figure from Greek Mythology and is believed to be the grand son of Zeus himself<sup><a href="ajax.html#2" class="notelink">[2]</a></sup>.</p>
+		<p>This is Santa, a serial rapist. If you've seen this man, contact the local police authorities without delay.<sup><a href="ajax.html#3" class="notelink">[3]</a></sup>.</p>
+	</div>
+
 	<div id="scratchboard">Scratch board</div>
 	<button id="scratch">Reload</button>
+	<button id="save">Save</button>
 
 	<div>
 		<h1>Notes</h1>
 		<p id="1">1. Asynchronous JavaScript and XML<p>
 		<p id="2">2. This is obviously bullshit.<p>
-		<p id="3">3. Another one.<p>
+		<p id="3">3. He's real and he's dangerous.<p>
+	</div>
+
+	<footer id="footer"></footer>
+
 	</div>
 
 </body>
