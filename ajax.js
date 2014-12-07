@@ -62,12 +62,37 @@ function loadResource(path, onReady) {
 			console.log("Loaded " + path + ".");
 			onReady(request); // Invoke callback
 		},
-		
+
 		failure: function(request) {
 			console.error(request.status.toString() + " An error occurred during a request for " + path + ".");
 		}
 	});
 
+}
+
+
+function loadStyles(path) {
+	ajax({
+		type: "GET",
+		url: path,
+		success: function(request) {
+			links = document.getElementsByTagName("link");
+			for (var i = 0; i < links.length; i++) {
+				if (links[i].type === "text/css") {
+					links[i].href = "";
+				} else {
+					console.log(links[i].type);
+				}
+			}
+
+			document.getElementsByTagName("head")[0].innerHTML += ("<style>" + request.response + "</style>");
+
+		},
+
+		failure: function(request) {
+			console.log(request.status.toString() + "Could not load stylesheet.");
+		}
+	});
 }
 
 
@@ -101,6 +126,7 @@ function reloadContents() {
 function addListeners() {
 	addReferenceHighlights();
 	document.getElementById("scratch").addEventListener("click", reloadContents);
+	document.getElementById("redress").addEventListener("click", function(e) { loadStyles("sample.css"); });
 }
 
 
