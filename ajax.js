@@ -55,20 +55,18 @@ function addReferenceHighlights () {
 function loadResource(path, onReady) {
 
 	// Sends a request for the specified resource and invokes the supplied callback upon success.
-
-	var request = new XMLHttpRequest();
-	request.open("GET", path, true);
-
-	request.onreadystatechange = function() {
-		if (request.status !== 200) {
-			console.error(request.status.toString() + " An error occurred during a request for " + path + ".");
-		} else {
+	ajax({
+		type: "GET",
+		url: path,
+		success: function(request) {
 			console.log("Loaded " + path + ".");
 			onReady(request); // Invoke callback
+		},
+		
+		failure: function(request) {
+			console.error(request.status.toString() + " An error occurred during a request for " + path + ".");
 		}
-	};
-
-	request.send();
+	});
 
 }
 
@@ -77,10 +75,10 @@ function ajax(attributes) {
 	// 
 	
 	var request = new XMLHttpRequest();
-	request.open(attributes["type"], attributes["url"], true);
+	request.open(attributes["type"], attributes["url"], true); // Asynchronous request
 
 	request.onreadystatechange = function() {
-		
+
 		if (request.status !== 200) {
 			attributes["failure"](request);
 		} else {
